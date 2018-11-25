@@ -1,6 +1,6 @@
 ---
 title: "Final Report: Your Title Here"
-author: "Don Francisco"
+author: "Leila Esmaeili"
 date: "December 5, 2018"
 output:
     github_document: default
@@ -60,6 +60,45 @@ melted_phyloseq %>%
   kable()
 ```
 
+```{r abundance-across-age-groups}
+# bar plot of age group and Abundance of sequences to visualize
+# total abundance in each of the 3 unique age groups
+plot_bar(phyloseq_obj, x = "host_age")
+```
+
+**Figure 1** This graph is a histogram that shows Abundance of seqences across 
+age groups. The largest number of  sequences was seen in Adults.  
+
+
+```{r histogram-diversity-Adolescent}
+# Abundance of  sequenecs in age group T to visualize diversity across classes
+age_phyloseq_obj <- subset_samples(phyloseq_obj, host_age == "adolescent (T)")
+plot_bar(age_phyloseq_obj, x = "Class")
+```
+
+** Figure 2** This graph is a histogram that describes diversity of classes in 
+Adolecents
+
+```{r histogram-diversity-Adults}
+# Histogram abundace Adults to visiualize diversity across classes
+age_phyloseq_obj <- subset_samples(phyloseq_obj, host_age == "adult (A)")
+plot_bar(age_phyloseq_obj, x = "Class")
+```
+
+** Figure 3** 
+This graph is a histogram that describes the abundance of sequences
+found in Adults  
+
+
+```{r histogram-diversity-Elderly}
+# Histogram abundance  Elderly to visualize diversity across classes
+age_phyloseq_obj <- subset_samples(phyloseq_obj, host_age == "elderly (O)")
+plot_bar(age_phyloseq_obj, x = "Class")
+```
+
+
+** Figure 4** This graph is a histogram that describes the abundance of 
+sequences found in Elderly
 
 In addition to a minimum of 5-8 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 

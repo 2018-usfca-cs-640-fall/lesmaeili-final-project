@@ -1,4 +1,8 @@
-# some comments
+# Author : "Leila Esmaeili"
+# Title:  " R Script for Final Project"
+# Due Date:  December 5, 2018
+# This is an R script that runs diagnostics to evaluate the quality of the data
+# found in the NCBI website for the article. 
 
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
