@@ -14,22 +14,34 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
+
+Cutaneous bacterial communities associated with 7 skin sites from 71 healthy individuals living in rural and urban areas of Shanghai, China, were examined in the context of several population variables. Correlations between bacterial community structure and skin physical parameters such as sebum, trans-epidermal water loss (TEWL), moisture and pH were also examined. Using these data, we tested the hypothesis that within a geographically semi-contiguous human population, the skin microbiota can show regional biogeographic patterns.
 
 # Methods
 
 ## Study design
+The authors of the paper recruited a  total of 71 subjects for the study, 36 living in the urban regions and 35 living in the rural regions of Shanghai, China.This study was approved by the Ethical Committee of Fudan University. A written informed consent was obtained from each subject or their guardians prior to sample collection. All data were de-identified.  There were several criteria that needed to be met.  For example,
+no subjects lived in the same family or worked in the same office. Subjects with any history of dermatologic diseases and those who had any antibiotic exposure in the past 6 months were excluded. Each subject was instructed not to wash the specific body sites for 12 hours (except hands for 2 hours) prior to sampling. Seven skin sites were sampled on each subject in order: back of hands (Hb), interdigital web space (Is), volar forearm (Vf), antecubital fossa (Af), nares (Na), glabella (Gb) and back (Ba)
 
-Add about half a page here. In this section instead of first person (I/we), use the authors of the paper you selected, since you'll just be describing what they did, based on the methods in their paper.
+
 
 ## Sample origin and sequencing
 
-Add about half a page here. In this section instead of first person (I/we), use the authors of the paper you selected, since you'll just be describing what they did, based on the methods in their paper.
+The sampling regions were swabbed approximately 50 times for at least 30 seconds.
+Add about half a page here.   Then the swab head was picked off by sterilized tweezers and carefully placed in the PowerBead Tube of the MO BIO PowerSoil DNA Isolation Kit (MO BIO Lab, Carlsbad, CA, USA).  All samples were stored at 4°C for DNA extraction. Following skin sampling, measurements were taken of skin sebum (by Sebumeter® SM 810, Courage & Khazaka, Cologne, Germany), TEWL (by VapoMeter, Delfin Tech, Kuopio, Finland), moisture (by Corneometer® CM 825, Courage & Khazaka) and pH (by Skin-pH-Meter® PH 905, Courage & Khazaka) DNA extraction from the head of the swabs was performed within 12 hours of sampling. The MO BIO PowerSoil DNA Isolation Kit with modifications was applied. Extracted DNA was resuspended in 100 μl eluent and stored at −20°C prior to PCR amplification.
+
+Bacterial 16S rRNA genes were amplified from the extracted DNA using two stages of PCR. For the first round of PCR, the modified primer set 27FYM (5’-AGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) and 536RK (5’-GTATTACCGCGGC(G/T)GCTGG-3’) were applied.  For the second round of PCR, the primer set, AdaA-27FYM and AdaB-536RK, which contained 454 pyrosequencing adapters were applied. The forward primer AdaA-27FYM (5’-CCATCTCATCCCTGCGTGTCTCCGACGACTNNNNNNNNTCAGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) contained 454 pyrosequencing adapter A, a unique 8-bp barcode (designated by NNNNNNNN) used to tag each PCR product [13], the bacterial primer 27FYM, and a 2-bp linker “TC” inserted between the barcode and the primer. The reverse primer AdaB-536RK (5’-CCTATCCCCTGTGTGCCTTGGCAGTCGACTCAGTATTACCGCGGC(G/T)GCTGG-3’) contained 454-pyrosequencing adapter B, the bacterial primer 536RK, and a “CA” inserted as a linker. For each 100-μl reaction, PCRs consisted of 1 μl of each forward and reverse primer (10 μM), 10 μl of template using the PCR product of the first round, 4 μl of BSA and 50 μl of Ex Taq Premix (TaKaRa). The second-round PCR program was similar to the first round, except that the number of amplification cycle was 10 instead of 20.
+
+The PCR products  were purified with UltraClean PCR CleanUp Kit (MO BIO Lab) following the direction of the manufacturer. Amplicon DNA concentrations were measured using PicoGreen dsDNA reagent (Invitrogen, Grand Island, NY, USA) on a TBS-380 Mini-Fluorometer (Promega, Madison, WI, USA).  The purified PCR products were sequenced using a GS-FLX pyrosequencing platform with Titanium chemistry (Roche, Basel, Switzerland) following the direction of the manufacturer.
+
+
 
 ## Computational
 
 These are the methods you used to do your bioinformatic analyses analyses. Should probably be between 0.5 and 1 pages. At a very minimum should include citations for DADA2 and phyloseq if you are doing an amplicon study, or other citations as appropriate.
 
+I sent the data through several diganostic processes in order to determine through
+DADA2 to determine error rates.
 # Results
 
 ## Subsections are ok in the results section too
@@ -53,13 +65,15 @@ load("output/phyloseq_obj.Rdata")
 load("output/melted_phyloseq.Rdata")
 ```
 
-```{r example-table}
+```{r mean_abundance vs host age table}
+# This table  tabulates mean abundance of bacteria in each unique age group
 melted_phyloseq %>%
   group_by(host_age) %>%
   summarize(mean_abund = mean(Abundance)) %>%
   kable()
 ```
-
+**Table 1** This table describes the mean abundace of bacteria in each unique
+age group.
 ```{r abundance-across-age-groups}
 # bar plot of age group and Abundance of sequences to visualize
 # total abundance in each of the 3 unique age groups
@@ -67,17 +81,18 @@ plot_bar(phyloseq_obj, x = "host_age")
 ```
 
 **Figure 1** This graph is a histogram that shows Abundance of seqences across 
-age groups. The largest number of  sequences was seen in Adults.  
+age groups. The highest abundance of sequences was seen in Adults.  
 
 
 ```{r histogram-diversity-Adolescent}
-# Abundance of  sequenecs in age group T to visualize diversity across classes
+# Abundance of sequenecs in Adolecents to visualize diversity across classes
 age_phyloseq_obj <- subset_samples(phyloseq_obj, host_age == "adolescent (T)")
 plot_bar(age_phyloseq_obj, x = "Class")
 ```
 
-** Figure 2** This graph is a histogram that describes diversity of classes in 
-Adolecents
+** Figure 2** This graph is a histogram of abundance and  diversity of sequences
+in Adolecents. The most abundant classes in this age group are Acientobacteria
+and Gammaprotectobacteria.
 
 ```{r histogram-diversity-Adults}
 # Histogram abundace Adults to visiualize diversity across classes
@@ -87,7 +102,7 @@ plot_bar(age_phyloseq_obj, x = "Class")
 
 ** Figure 3** 
 This graph is a histogram that describes the abundance of sequences
-found in Adults  
+found in Adults. Actiobacteria holds the highest abundance followed by Bacilli. 
 
 
 ```{r histogram-diversity-Elderly}
@@ -98,7 +113,8 @@ plot_bar(age_phyloseq_obj, x = "Class")
 
 
 ** Figure 4** This graph is a histogram that describes the abundance of 
-sequences found in Elderly
+sequences found in Elderly.  Acientobacteria is the most abundant followed
+by Bacili.
 
 In addition to a minimum of 5-8 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
 
@@ -106,4 +122,6 @@ In addition to a minimum of 5-8 figures/tables (and associated captions), you sh
 
 Add around 3-4 pages interpreting your results and considering future directions one might take in analyzing these data.
 
+The above results demonstrate that there are significant differences in the abundance
+and diversity of bacterial classes among 3 different age groups.
 # Sources Cited
