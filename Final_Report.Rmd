@@ -1,7 +1,8 @@
 ---
-title: "Final Report: Your Title Here"
-author: "Leila Esmaeili"
-date: "December 5, 2018"
+# Title: "Final Report: Influence of Age on Skin Microbiome"
+# Author: "Leila Esmaeili"
+# Date: "December 5, 2018"
+# contact: lesmaeili@dons.usfca.edu
 output:
     github_document: default
 bibliography: references.bib
@@ -14,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-The main purpose of this report is to explore how the data collected by Zeng et al can be used to investigate the relation between the skin microbiome and aging. It is important to understand the relationship between aging and human skin microbiome because this understanding can lay the foundation for creation of novel therapeutics that could slow down aging. This represents a paradigm shift for medicine in which our relationship with microbes is viewed as a symbiosis instead of a potential source for clinical infectious disease[@sleator2010human].
+The main purpose of this report is to explore how the data collected by Ying et al can be used to investigate the relation between the skin microbiome and aging.[@ying2015influence:1] It is important to understand the relationship between aging and human skin microbiome because this understanding can lay the foundation for creation of novel therapeutics that could slow down aging. This represents a paradigm shift for medicine in which our relationship with microbes is viewed as a symbiosis instead of a potential source for clinical infectious disease[@sleator2010human].
 
 
 Several studies have been done in C. elegans., a model organism, to find out relationships between the microbiome and aging. For instance, it has been shown that  E. coli  that co-exist with the worms secrete diffusible molecules, including metabolites and small RNAs that can impact C. elegans aging. [@heintz2014you]  Another study has revealed how drug action on host-microbiome interactions can impact longevity in C. elegans   Metformin ( a drug widely prescribed to treat Diabetes)  extends lifespan in C. elegans  by inhibiting l-folate and methionine metabolism in E. coli. This, in turn, leads to altered methionine metabolism in the worm, and increased lifespan[@cabreiro2013metformin]. 
@@ -30,7 +31,7 @@ It is worthwhile to note here the recent advances in mirobiome research has been
 
 ## Study design
 The authors of the paper recruited a  total of 71 subjects for the study, 36 living in the urban regions and 35 living in the rural regions of Shanghai, China.This study was approved by the Ethical Committee of Fudan University. A written informed consent was obtained from each subject or their guardians prior to sample collection. All data were de-identified.  There were several criteria that needed to be met.  For example,
-no subjects lived in the same family or worked in the same office. Subjects with any history of dermatologic diseases and those who had any antibiotic exposure in the past 6 months were excluded. Each subject was instructed not to wash the specific body sites for 12 hours (except hands for 2 hours) prior to sampling. Seven skin sites were sampled on each subject in order: back of hands (Hb), interdigital web space (Is), volar forearm (Vf), antecubital fossa (Af), nares (Na), glabella (Gb) and back (Ba)
+no subjects lived in the same family or worked in the same office. Subjects with any history of dermatologic diseases and those who had any antibiotic exposure in the past 6 months were excluded. Each subject was instructed not to wash the specific body sites for 12 hours (except hands for 2 hours) prior to sampling. Seven skin sites were sampled on each subject in order: back of hands (Hb), interdigital web space (Is), volar forearm (Vf), antecubital fossa (Af), nares (Na), glabella (Gb) and back (Ba).
 
 
 
@@ -39,9 +40,9 @@ no subjects lived in the same family or worked in the same office. Subjects with
 The sampling regions were swabbed approximately 50 times for at least 30 seconds.
  Then the swab head was picked off by sterilized tweezers and carefully placed in the PowerBead Tube of the MO BIO PowerSoil DNA Isolation Kit (MO BIO Lab, Carlsbad, CA, USA).  All samples were stored at 4°C for DNA extraction. Following skin sampling, measurements were taken of skin sebum (by Sebumeter® SM 810, Courage & Khazaka, Cologne, Germany), TEWL (by VapoMeter, Delfin Tech, Kuopio, Finland), moisture (by Corneometer® CM 825, Courage & Khazaka) and pH (by Skin-pH-Meter® PH 905, Courage & Khazaka) DNA extraction from the head of the swabs was performed within 12 hours of sampling. The MO BIO PowerSoil DNA Isolation Kit with modifications was applied. Extracted DNA was resuspended in 100 μl eluent and stored at −20°C prior to PCR amplification.
 
-Bacterial 16S rRNA genes were amplified from the extracted DNA using two stages of PCR. For the first round of PCR, the modified primer set 27FYM (5’-AGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) and 536RK (5’-GTATTACCGCGGC(G/T)GCTGG-3’) were applied.  For the second round of PCR, the primer set, AdaA-27FYM and AdaB-536RK, which contained 454 pyrosequencing adapters were applied. The forward primer AdaA-27FYM (5’-CCATCTCATCCCTGCGTGTCTCCGACGACTNNNNNNNNTCAGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) contained 454 pyrosequencing adapter A, a unique 8-bp barcode (designated by NNNNNNNN) used to tag each PCR product [13], the bacterial primer 27FYM, and a 2-bp linker “TC” inserted between the barcode and the primer. The reverse primer AdaB-536RK (5’-CCTATCCCCTGTGTGCCTTGGCAGTCGACTCAGTATTACCGCGGC(G/T)GCTGG-3’) contained 454-pyrosequencing adapter B, the bacterial primer 536RK, and a “CA” inserted as a linker. For each 100-μl reaction, PCRs consisted of 1 μl of each forward and reverse primer (10 μM), 10 μl of template using the PCR product of the first round, 4 μl of BSA and 50 μl of Ex Taq Premix (TaKaRa). The second-round PCR program was similar to the first round, except that the number of amplification cycle was 10 instead of 20.
+Bacterial 16S rRNA genes were amplified from the extracted DNA using two stages of PCR. For the first round of PCR, the modified primer set 27FYM (5’-AGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) and 536RK (5’-GTATTACCGCGGC(G/T)GCTGG-3’) were applied.  For the second round of PCR, the primer set, AdaA-27FYM and AdaB-536RK, which contained 454 pyrosequencing adapters were applied. The forward primer AdaA-27FYM (5’-CCATCTCATCCCTGCGTGTCTCCGACGACTNNNNNNNNTCAGAGTTTGAT(C/T)(A/C)TGGCTCAG-3’) contained 454 pyrosequencing adapter A, a unique 8-bp barcode (designated by NNNNNNNN) used to tag each PCR product [13], the bacterial primer 27FYM, and a 2-bp linker “TC” inserted between the barcode and the primer. The reverse primer AdaB-536RK (5’-CCTATCCCCTGTGTGCCTTGGCAGTCGACTCAGTATTACCGCGGC(G/T)GCTGG-3’) contained 454-pyrosequencing adapter B, the bacterial primer 536RK, and a “CA” inserted as a linker. For each 100-μl reaction, PCRs consisted of 1 μl of each forward and reverse primer (10 μM), 10 μl of template using the PCR product of the first round, 4 μl of BSA and 50 μl of Ex Taq Premix (TaKaRa). The second-round PCR program was similar to the first round, except that the number of amplification cycle was 10 instead of 20.[@ying2015influence:1]
 
-The PCR products  were purified with UltraClean PCR CleanUp Kit (MO BIO Lab) following the direction of the manufacturer. Amplicon DNA concentrations were measured using PicoGreen dsDNA reagent (Invitrogen, Grand Island, NY, USA) on a TBS-380 Mini-Fluorometer (Promega, Madison, WI, USA).  The purified PCR products were sequenced using a GS-FLX pyrosequencing platform with Titanium chemistry (Roche, Basel, Switzerland) following the direction of the manufacturer.
+The PCR products  were purified with UltraClean PCR CleanUp Kit (MO BIO Lab) following the direction of the manufacturer. Amplicon DNA concentrations were measured using PicoGreen dsDNA reagent (Invitrogen, Grand Island, NY, USA) on a TBS-380 Mini-Fluorometer (Promega, Madison, WI, USA).  The purified PCR products were sequenced using a GS-FLX pyrosequencing platform with Titanium chemistry (Roche, Basel, Switzerland) following the direction of the manufacturer[@ying2015influence].
 
 
 
@@ -52,42 +53,32 @@ I downloaded several packages in R to clean up and visiutalize the data.  Severa
 The main job of clearning the dataset and getting rid of duplicate sequences is done through Dada2 package. The dada2 package infers exact amplicon sequence variants (ASVs) from high-throughput amplicon sequencing data. . The dada2 pipeline takes as input demultiplexed fastq files, and outputs the sequence variants and their sample-wise abundances after removing substitution and chimera errors. Taxonomic classification is available via a native implementation of the RDP naive Bayesian classifier, and species-level assignment to 16S rRNA gene fragments by exact matching.[@lane1985rapid]
 Dada2 package was used to remove substitution and chimera erros. The files were sorted and the .Fasta ending was then cut off.  [@callahan2016] 
 
-Quality plots for all samples were also constructed.  Qualtiy profiles demonstrated that most reads tend to be lower in quality after around 200 basepairs.  DADA2 was then used to trimmed data for maximum length of 300. . The maxEE parameter sets the maximum number of “expected errors” allowed in a read, which is a better filter than simply averaging quality scores.   Several graphs were then  Should probably be between 0.5 and 1 pages. At a very minimum should include citations for DADA2 and phyloseq if you are doing an amplicon study, or other citations as appropriate.
+Quality plots for all samples were also constructed.  DADA2 was then used to trimmed data for maximum length of 600. . The maxEE parameter sets the maximum number of “expected errors” allowed in a read, which is a better filter than simply averaging quality score
 
 
 # Results
 I was curious to find out how many unique age groups are present in our data set and what gender those induvial are.  Therefore, I created Table 1. According to this table, there are 3 unique age groups in the dataset: Adolecents, adults and elderly with adults having the highest mean abundance of sequences.  
 
-To examine further the differences in terms of sequence abundance in these 3 age groups,  Figure 1 was constructed.   This figure shows that the abundance of sequences in adolecents  is about 6000whereas the number is approximately 25,000 in adults  and apporximately 12,000 in the elderly. I also wanted to find out the abundance of different classes and phyla  in all groups combined.  
+To examine further the differences in terms of sequence abundance in these 3 age groups,  Figure 1 was constructed.   This figure shows that the abundance of sequences in adolecents  is about 6000 whereas the number is approximately 25,000 in adults and apporximately 12,000 in the elderly. 
 
-I was curious to find out how much diversity is seen in adolecents.  In this age group, Acientobactor is the largest class followed by Gammaproteobacteria. 
+I was curious to find out how much diversity is seen in adolecents.  In this age group, Acientobactor is the largest class followed by Gammaproteobacteria (Figure 2). In  adults and elderly, abundance of sequences is  shown in Figure 3 and Figure 4 respectively.   Majority of Sequences found in both adults and elderly is Actinobacteria following Baccilli.
 
-In age adults  and elderly , abundance of sequences is  shown in Figure 3 and Figure 4 respectively.   Majority of Sequences found in both adults and elderly is Actinobacteria following Baccilli.
 ```{r load-libraries, message = FALSE}
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
 # or with the 'Packages' pane in RStudio
-
-
-```{r your-code-here}
-# Add code chunks as needed for your analyses
-# For most analyses, I would recommend splitting the
-# intensive computational part into a seperate R script file
-# and then just load your libraries and the data object here
-# using the `load()` function. Ask me for clarification if this is
-# unclear.
 ```
-
 ```{r load-packages-and-data}
 # load packages as needed
 library("dplyr")
 library("knitr")
 library("phyloseq")
-
+library("citr")
 # load data produced from analysis scripts using
 load("output/phyloseq_obj.Rdata")
 load("output/melted_phyloseq.Rdata")
 ```
+
 
 ```{r mean_abundance vs host age table}
 # This table  tabulates mean abundance of bacteria in each unique age group
@@ -143,7 +134,11 @@ by Bacili.
 # Discussion
 
 The above results demonstrate that there are significant differences in the abundance
-and diversity of bacterial classes among 3 different age groups.  Skin bacterial communities adapt through time, utilizing carbohydrates, proteins, lipids, and minerals present on the skin surface [29]. The ability of the skin to hold moisture and its sebum production capacities are affected by aging [30]. Lipophilic bacteria such as Propionibacterium, start to increase in abundance during adolescence and peak during the third decade of life, which parallels sebum levels [25]. Propionibacterium prefer an environment with higher moisture and sebum. Males, who have greater sebum secretion that remains stable with ageing [30], had a greater relative abundance of Propionibacterium bacteria, which increased with age.
+and diversity of bacterial classes among three different age groups of adolecents, adults and elderly.  Skin bacterial communities adapt through time, utilizing carbohydrates, proteins, lipids, and minerals present on the skin surface [@leyden1975age]. The ability of the skin to hold moisture and its sebum production capacities are affected by aging [@mathieu2013life]. Lipophilic bacteria such as Propionibacterium, start to increase in abundance during adolescence and peak during the third decade of life, which parallels sebum levels [@luebberding2013skin]. Propionibacterium prefer an environment with higher moisture and sebum. Males, who have greater sebum secretion that remains stable with ageing [@luebberding2013skin], had a greater relative abundance of Propionibacterium bacteria, which increased with age. 
 
-It is important to note that frequence of errors of data determined through DADA2 diganostics is unuusal.  For example, the expected outcome would have been to see that frequence of errors go down as the quality score improves.  However, we see dont see that pattern. On the contray, we see that error rates are constant despite chaneges in qualtiy score. It is curious why this is the case. Perhaps the authors made some errors during the PCR or extraction processes.
+This result demonstrates that we could possibly manipulate human skin microbiome to restore balance across age groups. However, It is important to note that frequence of errors of data in the paper determined through DADA2 diganostics is unuusal.  For example, the expected outcome would have been to see that frequency of errors go down as the quality score improves.  However, we  don' t see that pattern. On the contray, the error rates are constant despite chaneges in qualtiy score. It is curious why this is the case. Perhaps the authors made some errors during the PCR or extraction processes.  I would recommend re-doing PCR to determind if the error rates decrease.
+
+In summary, In conclusion, my analysis was sucessful in exploring how the data collected by Ying et al can be used to investigate the relation between the skin microbiome and aging. My analysis shows that there are differences in compostion and abundance of sequnces in each unique age group.  However, because of the high error frequency, we are limited to draw meaningful conclusions.  Further studeis with improvement in error rates are needed to lead the way to the creation of novel biologic therapeutics that could slow down aging.
+
+
 # Sources Cited

@@ -1,8 +1,10 @@
 # Author : "Leila Esmaeili"
-# Title:  " R Script for Final Project"
+# Title:  " R Script for Final Project: Influnence of Age on Skin Microbiome"
 # Due Date:  December 5, 2018
 # This is an R script that runs diagnostics to evaluate the quality of the data
 # found in the NCBI website for the article. 
+# Contact: lesmaeili@dons.usfca.edu
+
 
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
@@ -12,6 +14,7 @@ library("dplyr")
 library("tidyr")
 library("knitr")
 library("ggplot2")
+library("phyloseq")
 
 # this package allows for the easy inclusion of literature citations in our Rmd
 # more info here: https://github.com/crsh/citr
